@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050d1c">
+<title>OM SAI MOBILE | Premium Mobile Store</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600&family=Mukta:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&family=Bebas+Neue&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --bg:#f3f8ff;
+ --text:#0e1f3a;
+ --muted:#5f7390;
+ --blue:#0a84ff;
+ --sky:#4cc3ff;
+ --cyan:#7ae8ff;
+ --pink:#ff4d9d;
+ --gold:#ffc83d;
+ --border:#dce9f8;
+ --shadow:0 18px 50px rgba(20,70,130,.13);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+body{
+ background:var(--bg);
+ color:var(--text);
+ font-family:'Outfit','Mukta',sans-serif;
+ overflow-x:hidden;
+ position:relative;
+}
+
+/* POORI SITE KA HALKA PHOTO */
+body::before{
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:-1;
+ background:url('IMG_20261122_161805_681.jpg') center/cover no-repeat;
+ opacity:.07;
+ filter:grayscale(.3) blur(1px);
+ pointer-events:none;
+}
+
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+.container{width:min(1160px,92%);margin:auto;}
+
+h1,h2,h3,h4{font-family:'Outfit','Mukta',sans-serif;font-weight:900;}
+p{font-family:'Poppins','Mukta',sans-serif;line-height:1.9;}
+
+/* TOP BAR (scrolling) */
+.topbar{
+ background:linear-gradient(90deg,#06182f,#0a3a6e,#06182f);
+ color:#cfeeff;
+ overflow:hidden;
+ white-space:nowrap;
+ padding:10px 0;
+ font-size:11px;
+ font-weight:800;
+ letter-spacing:4px;
+}
+.topbar div{display:inline-block;padding-left:100%;animation:marquee 22s linear infinite;}
+@keyframes marquee{to{transform:translateX(-100%);}}
+
+/* HEADER */
+header{
+ position:sticky;
+ top:0;
+ z-index:1000;
+ background:rgba(255,255,255,.88);
+ backdrop-filter:blur(16px);
+ border-bottom:1px solid var(--border);
+}
+.nav{min-height:74px;display:flex;justify-content:space-between;align-items:center;gap:15px;}
+.logo{display:flex;align-items:center;gap:11px;}
+.logo-icon{
+ width:46px;height:46px;
+ display:grid;place-items:center;
+ border-radius:15px;
+ color:white;
+ font-size:25px;
+ background:linear-gradient(135deg,#5ad0ff,#0a84ff);
+ box-shadow:0 8px 22px #0a84ff55;
+}
+.logo-name{
+ font-family:'Bebas Neue',sans-serif;
+ font-size:27px;
+ font-weight:400;
+ letter-spacing:3px;
+ line-height:1;
+ background:linear-gradient(90deg,#0e1f3a,#0a84ff);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.logo-name small{
+ display:block;
+ font-family:'Playfair Display',serif;
+ font-style:italic;
+ font-size:11px;
+ letter-spacing:2px;
+ margin-top:4px;
+ -webkit-text-fill-color:var(--blue);
+}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:2px;
+ color:#4a6283;
+ position:relative;
+ transition:.3s;
+}
+.nav-links a::after{
+ content:"";position:absolute;left:0;bottom:-6px;
+ width:0;height:2px;background:var(--blue);transition:.3s;
+}
+.nav-links a:hover{color:var(--blue);}
+.nav-links a:hover::after{width:100%;}
+.menu-btn{
+ display:none;width:43px;height:43px;
+ border:1px solid var(--border);background:white;
+ border-radius:12px;font-size:23px;color:var(--blue);
+}
+
+/* BUTTONS */
+.btn{
+ display:inline-flex;justify-content:center;align-items:center;gap:9px;
+ padding:15px 26px;
+ border-radius:50px;
+ background:linear-gradient(135deg,#4cc3ff,#0a84ff);
+ color:white;
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:2px;
+ border:0;
+ box-shadow:0 10px 26px #0a84ff44;
+ transition:.3s;
+ position:relative;overflow:hidden;
+}
+.btn::before{
+ content:"";position:absolute;top:0;left:-120%;
+ width:60%;height:100%;
+ background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+ transform:skewX(-20deg);
+ transition:.6s;
+}
+.btn:hover::before{left:130%;}
+.btn:hover{transform:translateY(-4px);box-shadow:0 16px 32px #0a84ff55;}
+.btn-outline{
+ background:rgba(255,255,255,.08);
+ border:1.5px solid #6fd0ff;
+ color:white;
+ box-shadow:none;
+ backdrop-filter:blur(6px);
+}
+
+/* ================= HERO (BAHAR SE OPPO DUKAAN KA PHOTO - ZYADA DARK) ================= */
+.hero{
+ min-height:680px;
+ display:flex;
+ align-items:center;
+ position:relative;
+ overflow:hidden;
+ background:
+  linear-gradient(100deg,rgba(0,0,0,.92),rgba(0,0,0,.80),rgba(0,0,0,.60)),
+  url('IMG_20261122_163014_450.jpg') center/cover no-repeat;
+}
+.hero::after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(0deg,var(--bg),transparent 18%);
+ pointer-events:none;
+}
+
+.hero-content{position:relative;z-index:2;max-width:760px;padding:90px 0 120px;}
+
+.eyebrow{
+ display:inline-flex;align-items:center;gap:10px;
+ padding:10px 18px;
+ border:1px solid rgba(255,255,255,.35);
+ background:rgba(0,0,0,.35);
+ backdrop-filter:blur(8px);
+ color:#ffffff;
+ border-radius:50px;
+ font-size:11px;font-weight:800;letter-spacing:3px;
+ margin-bottom:26px;
+}
+.eyebrow span{
+ width:8px;height:8px;border-radius:50%;
+ background:#3effa8;box-shadow:0 0 12px #3effa8;
+ animation:pulse 1.5s infinite;
+}
+@keyframes pulse{50%{opacity:.3;transform:scale(1.5);}}
+
+/* ===== STYLISH OM SAI MOBILE TEXT ===== */
+.hero h1{line-height:.92;font-weight:400;}
+
+.hero h1 .welcome{
+ display:block;
+ font-family:'Pacifico',cursive;
+ font-weight:400;
+ font-size:clamp(26px,5vw,44px);
+ letter-spacing:1px;
+ color:var(--gold);
+ text-shadow:0 0 22px rgba(255,200,61,.55);
+ margin-bottom:6px;
+ transform:rotate(-3deg);
+ transform-origin:left;
+}
+
+.hero h1 .big{
+ display:block;
+ font-family:'Bebas Neue',sans-serif;
+ font-size:clamp(78px,17vw,168px);
+ letter-spacing:7px;
+ text-transform:uppercase;
+ color:#fff;
+ text-shadow:
+  0 0 12px rgba(122,232,255,.7),
+  0 0 38px rgba(10,132,255,.75),
+  0 8px 30px rgba(0,0,0,.7);
+}
+
+.hero h1 .shine{
+ display:block;
+ font-family:'Bebas Neue',sans-serif;
+ font-size:clamp(78px,17vw,168px);
+ letter-spacing:7px;
+ text-transform:uppercase;
+ background:linear-gradient(100deg,#4cc3ff 0%,#ffffff 25%,#ff4d9d 45%,#ffc83d 60%,#4cc3ff 80%,#ffffff 100%);
+ background-size:250% auto;
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+ animation:shine 5s linear infinite;
+ filter:drop-shadow(0 0 22px rgba(76,195,255,.6));
+}
+@keyframes shine{to{background-position:250% center;}}
+
+.hero h1 .line{
+ display:block;
+ width:150px;height:5px;
+ border-radius:5px;
+ margin:20px 0 4px;
+ background:linear-gradient(90deg,var(--sky),var(--pink),transparent);
+}
+
+.tagline{
+ font-family:'Playfair Display',serif;
+ font-style:italic;
+ font-weight:700;
+ font-size:clamp(17px,3vw,23px);
+ color:#ffffff;
+ margin:18px 0 12px;
+ letter-spacing:.5px;
+ text-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+.tagline b{color:var(--gold);font-weight:800;}
+
+.hero p{
+ max-width:500px;
+ color:#e6eef8;
+ font-size:14px;
+ font-weight:500;
+ margin:0 0 32px;
+ line-height:2;
+ border-left:3px solid var(--sky);
+ padding-left:16px;
+ text-shadow:0 2px 10px rgba(0,0,0,.6);
+}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-note{
+ margin-top:38px;
+ color:#e6f2ff;
+ font-size:12px;font-weight:800;letter-spacing:3px;
+ text-shadow:0 2px 10px rgba(0,0,0,.6);
+}
+
+/* FEATURES */
+.features{margin-top:-40px;position:relative;z-index:5;}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.feature{
+ padding:28px 18px;
+ text-align:center;
+ background:rgba(255,255,255,.85);
+ backdrop-filter:blur(14px);
+ border:1px solid #fff;
+ border-radius:22px;
+ box-shadow:var(--shadow);
+ transition:.35s;
+}
+.feature:hover{transform:translateY(-8px);box-shadow:0 24px 55px rgba(10,132,255,.22);}
+.feature-icon{font-size:34px;margin-bottom:10px;}
+.feature h3{font-size:20px;letter-spacing:.3px;margin-bottom:4px;}
+.feature p{color:var(--muted);font-size:12px;font-weight:500;line-height:1.6;}
+
+/* SECTIONS */
+section{padding:90px 0;}
+.section-heading{text-align:center;margin-bottom:46px;}
+.section-heading .tag{
+ font-family:'Pacifico',cursive;
+ font-size:20px;
+ letter-spacing:1px;
+ color:var(--pink);
+ font-weight:400;
+}
+.section-heading h2{
+ font-family:'Bebas Neue',sans-serif;
+ font-weight:400;
+ font-size:clamp(42px,8vw,72px);
+ letter-spacing:5px;
+ margin:6px 0 10px;
+ background:linear-gradient(100deg,#0e1f3a,#0a84ff,#4cc3ff);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-heading h2::after{
+ content:"";display:block;
+ width:90px;height:4px;border-radius:4px;
+ margin:10px auto 0;
+ background:linear-gradient(90deg,var(--sky),var(--pink));
+}
+.section-heading p{color:var(--muted);font-size:14px;font-weight:500;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;}
+.about-image{position:relative;}
+.about-image::before{
+ content:"";position:absolute;inset:-14px 14px 14px -14px;
+ border:2px solid var(--sky);border-radius:26px;opacity:.5;
+}
+.about-image img{
+ position:relative;
+ width:100%;height:440px;object-fit:cover;
+ border-radius:24px;box-shadow:var(--shadow);
+}
+.image-label{
+ position:absolute;bottom:20px;left:20px;
+ padding:13px 20px;
+ background:rgba(6,24,47,.88);
+ backdrop-filter:blur(8px);
+ color:white;border-radius:14px;
+ font-family:'Bebas Neue',sans-serif;
+ font-size:20px;letter-spacing:3px;
+}
+.about-text .tag{
+ font-family:'Pacifico',cursive;
+ font-size:20px;color:var(--pink);font-weight:400;
+}
+.about-text h2{
+ font-family:'Bebas Neue',sans-serif;
+ font-weight:400;
+ font-size:clamp(46px,8vw,76px);
+ line-height:1;letter-spacing:4px;
+ margin:8px 0 16px;
+}
+.about-text h2 span{
+ display:block;
+ background:linear-gradient(100deg,#0a84ff,#4cc3ff,#ff4d9d);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.about-text p{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:20px;}
+.about-list{display:grid;gap:14px;margin:26px 0;}
+.about-list div{
+ display:flex;gap:13px;align-items:center;
+ font-size:15px;font-weight:700;
+ padding:13px 16px;
+ background:rgba(255,255,255,.8);
+ border:1px solid var(--border);
+ border-radius:14px;
+ transition:.3s;
+}
+.about-list div:hover{transform:translateX(8px);border-color:var(--sky);}
+.check{
+ width:28px;height:28px;border-radius:50%;
+ background:linear-gradient(135deg,#4cc3ff,#0a84ff);
+ color:white;display:grid;place-items:center;font-weight:900;font-size:14px;
+}
+
+/* GALLERY */
+#gallery{background:rgba(228,241,255,.78);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.gallery-item{
+ position:relative;overflow:hidden;
+ border-radius:20px;
+ border:3px solid #fff;
+ box-shadow:var(--shadow);
+}
+.gallery-item img{
+ width:100%;height:270px;object-fit:cover;display:block;
+ transition:transform .6s;
+}
+.gallery-item:hover img{transform:scale(1.1);}
+.gallery-item p{
+ position:absolute;left:0;right:0;bottom:0;
+ padding:34px 16px 14px;
+ font-family:'Playfair Display',serif;
+ font-style:italic;font-weight:700;
+ font-size:17px;color:#fff;line-height:1.3;
+ background:linear-gradient(0deg,rgba(3,12,28,.9),transparent);
+}
+
+/* INSTAGRAM */
+.social-section{
+ background:rgba(255,255,255,.82);
+ border-top:1px solid var(--border);
+ border-bottom:1px solid var(--border);
+}
+.social-card{
+ max-width:720px;margin:auto;
+ padding:44px 22px;text-align:center;
+ background:linear-gradient(145deg,#ffffff,#eef6ff);
+ border:1px solid var(--border);
+ border-radius:30px;
+ box-shadow:var(--shadow);
+}
+.instagram-icon{width:64px;height:64px;margin:0 auto 16px;}
+.social-card h2{
+ font-family:'Pacifico',cursive;
+ font-weight:400;
+ font-size:clamp(26px,5vw,38px);
+ margin-bottom:10px;
+ background:linear-gradient(100deg,#833ab4,#e1306c,#f77737);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.social-card p{color:var(--muted);font-size:14px;margin-bottom:24px;font-weight:500;}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.contact-card{
+ background:rgba(255,255,255,.9);
+ border:1px solid var(--border);
+ padding:34px;
+ border-radius:24px;
+ box-shadow:var(--shadow);
+ transition:.35s;
+}
+.contact-card:hover{transform:translateY(-8px);}
+.contact-icon{font-size:34px;margin-bottom:14px;}
+.contact-card h3{
+ font-family:'Bebas Neue',sans-serif;
+ font-weight:400;font-size:32px;letter-spacing:3px;margin-bottom:12px;
+}
+.contact-card p{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:20px;line-height:2;}
+.contact-card .btn-outline{color:var(--blue);border-color:var(--blue);background:transparent;}
+
+/* FOOTER */
+footer{background:#06182f;color:white;padding:54px 0 22px;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px;}
+footer h3{
+ font-family:'Bebas Neue',sans-serif;
+ font-weight:400;font-size:32px;letter-spacing:4px;margin-bottom:14px;
+ background:linear-gradient(90deg,#fff,#4cc3ff);
+ -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+footer h4{
+ font-family:'Pacifico',cursive;font-weight:400;
+ font-size:17px;color:var(--gold);margin-bottom:14px;
+}
+footer p,footer a{color:#b8cce3;font-size:13px;font-weight:500;line-height:2.2;}
+footer a:hover{color:#58caff;}
+.footer-links{display:grid;gap:4px;}
+.footer-bottom{
+ text-align:center;border-top:1px solid #ffffff20;
+ margin-top:36px;padding-top:20px;
+ color:#9fb8d6;font-size:11px;font-weight:700;letter-spacing:3px;
+}
+
+/* WHATSAPP */
+.whatsapp-float{
+ position:fixed;right:20px;bottom:23px;z-index:999;
+ width:60px;height:60px;border-radius:50%;
+ background:#20c86a;display:grid;place-items:center;
+ box-shadow:0 8px 26px #20c86a77;
+ animation:wa 2s infinite;
+}
+@keyframes wa{
+ 0%{box-shadow:0 0 0 0 #20c86a88;}
+ 70%{box-shadow:0 0 0 18px #20c86a00;}
+ 100%{box-shadow:0 0 0 0 #20c86a00;}
+}
+.whatsapp-float svg{width:31px;height:31px;fill:white;}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1);}
+.reveal.show{opacity:1;transform:none;}
+
+/* MOBILE */
+@media(max-width:800px){
+ .nav{min-height:66px;}
+ .menu-btn{display:block;}
+ .nav-links{
+  display:none;position:absolute;top:66px;left:0;width:100%;
+  background:white;padding:24px 5%;
+  flex-direction:column;align-items:flex-start;gap:22px;
+  border-bottom:1px solid var(--border);box-shadow:var(--shadow);
+ }
+ .nav-links.active{display:flex;}
+ .hero{min-height:620px;background-position:58% center;}
+ .hero-content{padding:80px 0 110px;}
+ .about-grid{grid-template-columns:1fr;gap:34px;}
+ .about-image img{height:320px;}
+ .gallery-grid{grid-template-columns:repeat(2,1fr);}
+ .gallery-item img{height:210px;}
+ .contact-grid{grid-template-columns:1fr;}
+ .footer-grid{grid-template-columns:1fr 1fr;}
+ .footer-grid>div:first-child{grid-column:1/-1;}
+}
+@media(max-width:480px){
+ .container{width:91%;}
+ .topbar{font-size:9px;letter-spacing:3px;}
+ .logo-name{font-size:23px;}
+ .logo-icon{width:40px;height:40px;}
+ .hero{min-height:640px;}
+ .hero h1 .big,.hero h1 .shine{font-size:80px;letter-spacing:4px;}
+ .hero p{font-size:13px;}
+ .hero-buttons .btn{flex:1;padding:14px 10px;font-size:10px;letter-spacing:1px;}
+ section{padding:66px 0;}
+ .feature-grid{grid-template-columns:1fr;}
+ .about-image img{height:270px;}
+ .gallery-grid{gap:10px;}
+ .gallery-item img{height:165px;}
+ .gallery-item p{font-size:13px;padding:26px 10px 10px;}
+ .footer-grid{grid-template-columns:1fr;}
+ .footer-grid>div:first-child{grid-column:auto;}
+ .whatsapp-float{width:54px;height:54px;right:15px;bottom:17px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+ <div>✦ OM SAI MOBILE ✦ SMARTPHONES ✦ ACCESSORIES ✦ MOBILE RECHARGE ✦ KASIMABAD MAU ROAD ✦</div>
+</div>
+
+<header>
+ <div class="container nav">
+  <a href="#home" class="logo">
+   <div class="logo-icon">ॐ</div>
+   <div class="logo-name">
+    OM SAI MOBILE
+    <small>Mobile Shop</small>
+   </div>
+  </a>
+
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">HOME</a>
+   <a href="#about">ABOUT</a>
+   <a href="#gallery">GALLERY</a>
+   <a href="#instagram">INSTAGRAM</a>
+   <a href="#contact">CONTACT</a>
+  </nav>
+
+  <button class="menu-btn" id="menuBtn">☰</button>
+ </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+ <div class="container">
+  <div class="hero-content">
+
+   <div class="eyebrow"><span></span> NOW OPEN • KASIMABAD</div>
+
+   <h1>
+    <span class="welcome">Welcome to</span>
+    <span class="big">OM SAI</span>
+    <span class="shine">MOBILE</span>
+    <span class="line"></span>
+   </h1>
+
+   <div class="tagline">
+    Your <b>Smart Phone</b> World ✦ <span id="typed"></span>
+   </div>
+
+   <p>
+    Welcome to Om Sai Mobile Shop. Explore our mobile shop,
+    discover smartphone brands and visit us for your mobile needs.
+   </p>
+
+   <div class="hero-buttons">
+    <a href="#gallery" class="btn">EXPLORE SHOP ↗</a>
+    <a href="https://wa.me/919169003555" target="_blank" class="btn btn-outline">WHATSAPP US</a>
+   </div>
+
+   <div class="hero-note">✦ OM SAI MOBILE — KASIMABAD</div>
+
+  </div>
+ </div>
+</section>
+
+<!-- FEATURES -->
+<div class="container features">
+ <div class="feature-grid">
+
+  <div class="feature reveal">
+   <div class="feature-icon">📱</div>
+   <h3>Smartphones</h3>
+   <p>Explore Mobile Phones</p>
+  </div>
+
+  <div class="feature reveal">
+   <div class="feature-icon">🎧</div>
+   <h3>Accessories</h3>
+   <p>Mobile Accessories</p>
+  </div>
+
+  <div class="feature reveal">
+   <div class="feature-icon">🔋</div>
+   <h3>Mobile Recharge</h3>
+   <p>Recharge Services</p>
+  </div>
+
+ </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+ <div class="container about-grid">
+
+  <div class="about-image reveal">
+   <img src="IMG_20261122_161805_681.jpg" alt="Om Sai Mobile Shop">
+   <div class="image-label">OM SAI MOBILE SHOP</div>
+  </div>
+
+  <div class="about-text reveal">
+   <div class="tag">About our store</div>
+
+   <h2>
+    Welcome To
+    <span>OM SAI MOBILE</span>
+   </h2>
+
+   <p>
+    Om Sai Mobile Shop welcomes you. Visit our store for
+    smartphones, mobile accessories and recharge services.
+    We are located at Kasimabad Mau Road, Hanuman Mandir.
+   </p>
+
+   <div class="about-list">
+    <div><span class="check">✓</span> Smartphone Collection</div>
+    <div><span class="check">✓</span> Mobile Accessories</div>
+    <div><span class="check">✓</span> Mobile Recharge</div>
+   </div>
+
+   <a href="https://wa.me/919169003555" target="_blank" class="btn">CONTACT ON WHATSAPP ↗</a>
+  </div>
+
+ </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+ <div class="container">
+
+  <div class="section-heading reveal">
+   <div class="tag">Our shop</div>
+   <h2>STORE GALLERY</h2>
+   <p>Take a look inside Om Sai Mobile Shop.</p>
+  </div>
+
+  <div class="gallery-grid">
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_161805_681.jpg" alt="Mobile shop interior">
+    <p>Our Mobile Store</p>
+   </div>
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_162959_932.jpg" alt="Mobile shop exterior">
+    <p>Shop Front</p>
+   </div>
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_163014_450.jpg" alt="Mobile collection">
+    <p>Mobile Collection</p>
+   </div>
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_163016_845.jpg" alt="Mobile shop display">
+    <p>Our Store Display</p>
+   </div>
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_162959_932.jpg" alt="Om Sai Mobile">
+    <p>Om Sai Mobile</p>
+   </div>
+
+   <div class="gallery-item reveal">
+    <img src="IMG_20261122_161805_681.jpg" alt="Store interior">
+    <p>Visit Our Store</p>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="social-section" id="instagram">
+ <div class="container">
+
+  <div class="section-heading reveal">
+   <div class="tag">Follow us</div>
+   <h2>CONNECT WITH US</h2>
+   <p>Follow our Instagram profile for updates.</p>
+  </div>
+
+  <div class="social-card reveal">
+
+   <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="20" height="20" rx="6" stroke="#D94B8D" stroke-width="2"/>
+    <circle cx="12" cy="12" r="4.5" stroke="#D94B8D" stroke-width="2"/>
+    <circle cx="18" cy="6" r="1.3" fill="#D94B8D"/>
+   </svg>
+
+   <h2>@abhishekpatel0190</h2>
+   <p>Follow Abhishek Patel on Instagram.</p>
+
+   <a href="https://www.instagram.com/abhishekpatel0190/" target="_blank" rel="noopener" class="btn">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+     <rect x="2" y="2" width="20" height="20" rx="6"/>
+     <circle cx="12" cy="12" r="4"/>
+     <circle cx="18" cy="6" r="1" fill="currentColor"/>
+    </svg>
+    FOLLOW ON INSTAGRAM ↗
+   </a>
+
+  </div>
+ </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+ <div class="container">
+
+  <div class="section-heading reveal">
+   <div class="tag">Get in touch</div>
+   <h2>VISIT OUR STORE</h2>
+   <p>We look forward to welcoming you.</p>
+  </div>
+
+  <div class="contact-grid">
+
+   <div class="contact-card reveal">
+    <div class="contact-icon">📍</div>
+    <h3>OUR ADDRESS</h3>
+    <p>
+     KASIMABAD MAU ROAD<br>
+     HANUMAN MANDIR<br>
+     PIN CODE - 233230
+    </p>
+    <a class="btn btn-outline"
+       href="https://www.google.com/maps/search/?api=1&query=Hanuman+Mandir+Kasimabad+Mau+Road+233230"
+       target="_blank">FIND LOCATION ↗</a>
+   </div>
+
+   <div class="contact-card reveal">
+    <div class="contact-icon">💬</div>
+    <h3>WHATSAPP CONTACT</h3>
+    <p>
+     Have a question? Contact our shop directly
+     through WhatsApp.
+    </p>
+    <a class="btn" href="https://wa.me/919169003555" target="_blank">CHAT ON WHATSAPP ↗</a>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+ <div class="container">
+
+  <div class="footer-grid">
+
+   <div>
+    <h3>ॐ OM SAI MOBILE</h3>
+    <p>
+     Your Mobile Shop.<br>
+     Smartphones, accessories and recharge services.
+    </p>
+   </div>
+
+   <div>
+    <h4>Quick Links</h4>
+    <div class="footer-links">
+     <a href="#home">Home</a>
+     <a href="#about">About Us</a>
+     <a href="#gallery">Gallery</a>
+     <a href="#contact">Contact</a>
+    </div>
+   </div>
+
+   <div>
+    <h4>Connect</h4>
+    <div class="footer-links">
+     <a href="https://www.instagram.com/abhishekpatel0190/" target="_blank">Instagram ↗</a>
+     <a href="https://wa.me/919169003555" target="_blank">WhatsApp ↗</a>
+    </div>
+   </div>
+
+  </div>
+
+  <div class="footer-bottom">© 2026 OM SAI MOBILE. ALL RIGHTS RESERVED.</div>
+
+ </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/919169003555" target="_blank" rel="noopener" aria-label="Open WhatsApp">
+ <svg viewBox="0 0 32 32">
+  <path d="M16 3.2A12.7 12.7 0 0 0 5.1 22.4L3.4 29l6.8-1.8A12.8 12.8 0 1 0 16 3.2zm0 23.2c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 .9 1.1-3.9-.3-.4A10.3 10.3 0 1 1 16 26.4zm5.7-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/>
+ </svg>
+</a>
+
+<script>
+/* Mobile menu */
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+ navLinks.classList.toggle("active");
+ menuBtn.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+});
+document.querySelectorAll(".nav-links a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  navLinks.classList.remove("active");
+  menuBtn.textContent="☰";
+ });
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver((entries)=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("show");io.unobserve(e.target);}
+ });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* Typing tagline */
+const words = ["Smartphones","Accessories","Mobile Recharge"];
+const typed = document.getElementById("typed");
+let w=0,c=0,del=false;
+function type(){
+ const word = words[w];
+ typed.textContent = word.substring(0,c);
+ if(!del && c<word.length){c++;setTimeout(type,110);}
+ else if(!del){del=true;setTimeout(type,1200);}
+ else if(c>0){c--;setTimeout(type,55);}
+ else{del=false;w=(w+1)%words.length;setTimeout(type,300);}
+}
+type();
+</script>
+
+</body>
+  </html>
